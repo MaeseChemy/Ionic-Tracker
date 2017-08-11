@@ -1,0 +1,39 @@
+<ion-content padding>
+
+  <ion-slides pager>
+      <ion-slide>
+
+        <img src="assets/img/user.jpg" class="slide-image"/>
+        <h2 class="slide-title" innerHTML="Write your Tracker Key"></h2>
+        <p innerHTML="Type your Tracker Key to access"></p>
+
+        <ion-list>
+          <ion-item>
+            <ion-label stacked>Key</ion-label>
+            <ion-input type="text" [(ngModel)]="key" (keyup.enter)="verifyUser()"></ion-input>
+          </ion-item>
+        </ion-list>
+
+        <div padding>
+          <button ion-button color="primary" block [disabled]="key.length < 3" (click)="verifyUser()">Verify</button>
+        </div>
+
+      </ion-slide>
+
+      <!-- Ultimo Slide -->
+      <ion-slide>
+        <ion-toolbar>
+        </ion-toolbar>
+        <img src="assets/img/check.jpg" class="slide-image"/>
+        <h2 class="slide-title">Ready to Start?</h2>
+
+        <button ion-button large clear icon-right color="primary" (click)="access()">
+          Access
+          <ion-icon name="arrow-forward"></ion-icon>
+        </button>
+
+      </ion-slide>
+      <!-- Fin del último slide -->
+
+    </ion-slides>
+</ion-content>
